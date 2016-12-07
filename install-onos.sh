@@ -24,7 +24,7 @@ ln -s /opt/onos/*karaf-* /opt/onos/karaf
 echo "*** Configuring ONOS user and default apps"
 adduser onos --system --no-create-home < /dev/null
 tee /opt/onos/options <<EOF
- export ONOS_USER=onos
+export ONOS_USER=onos
 export ONOS_APPS=drivers,openflow,proxyarp,mobility,fwd
 EOF
 
