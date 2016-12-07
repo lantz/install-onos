@@ -8,7 +8,7 @@ echo "*** Installing ONOS dependencies"
 apt-get install software-properties-common -y
 add-apt-repository ppa:webupd8team/java -y
 apt-get update
-echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections
+echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
 apt-get install oracle-java8-installer oracle-java8-set-default -y
 
 echo "*** Fetching ONOS"
