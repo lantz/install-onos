@@ -21,8 +21,8 @@ tar  xzf onos*.tar.gz -C /opt
 ln -s /opt/onos-* /opt/onos
 ln -s /opt/onos/*karaf-* /opt/onos/karaf
 
-echo "*** Configuring ONOS user and default apps"
-adduser onos --system --no-create-home < /dev/null
+echo "*** Configuring ONOS user and group, and default apps"
+adduser onos --system --group --no-create-home < /dev/null
 tee /opt/onos/options <<EOF
 export ONOS_USER=onos
 export ONOS_APPS=drivers,openflow,proxyarp,mobility,fwd
