@@ -34,10 +34,14 @@ EOF
 echo "*** Copying init files"
 cp /opt/onos/init/onos.initd /etc/init.d/onos
 cp /opt/onos/init/onos.conf /etc/init/onos.conf
-which systemctl && ( systemctl daemon-reload; systemctl enable onos )
+which systemctl > /dev/null && ( systemctl daemon-reload; systemctl enable onos )
 
 echo "*** Starting ONOS"
 service onos start
 
 echo "*** Checking ONOS status"
-service onos status
+if which systemctl > /dev/null; then
+   systemctl onos status -l --no-pager
+else
+   service onos status
+fi
