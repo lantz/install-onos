@@ -41,7 +41,10 @@ service onos start
 
 echo "*** Checking ONOS status"
 if which systemctl > /dev/null; then
-   systemctl onos status -l --no-pager
+   systemctl status onos -l --no-pager
 else
    service onos status
 fi
+
+echo "*** Checkint whether java is running"
+pgrep java
