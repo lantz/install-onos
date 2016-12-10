@@ -22,7 +22,7 @@ ln -s /opt/onos-* /opt/onos
 ln -s /opt/onos/*karaf-* /opt/onos/karaf
 
 echo "*** Configuring ONOS user and group, and default apps"
-adduser onos --system --group --no-create-home < /dev/null
+adduser onos --system --group < /dev/null
 tee /opt/onos/options <<EOF
 export ONOS_USER=onos
 export ONOS_APPS=drivers,openflow,proxyarp,mobility,fwd
