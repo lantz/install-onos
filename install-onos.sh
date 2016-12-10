@@ -38,3 +38,6 @@ which systemctl && ( systemctl daemon-reload; systemctl enable onos )
 
 echo "*** Starting ONOS"
 service onos start
+
+echo "*** Checking ONOS status"
+service onos status
