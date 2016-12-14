@@ -11,13 +11,18 @@ apt-get update
 echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
 apt-get install oracle-java8-installer oracle-java8-set-default -y
 
-echo "*** Fetching ONOS"
-wget -c http://downloads.onosproject.org/nightly/onos-1.8.0-rc4.tar.gz
+echo "*** Checking for ONOS archive"
+ONOS_TAR=($(echo onos*.tar.gz))
+if [ ! -r $ONOS_TAR ]; then
+    ONOS_TAR=onos-1.8.0-rc6.tar.gz
+    echo "*** Fetching $ONOS_TAR"
+    wget -c http://downloads.onosproject.org/nightly/$ONOS_TAR
+fi
 
-echo "*** Unpacking ONOS archive and creating symlinks"
+echo "*** Unpacking $ONOS_RELEASE.tar.gz into /opt/onos and creating symlinks"
 mkdir -p /opt
 rm -rf /opt/onos*
-tar  xzf onos*.tar.gz -C /opt
+tar xzf $ONOS_TAR -C /opt
 ln -s /opt/onos-* /opt/onos
 ln -s /opt/onos/*karaf-* /opt/onos/karaf
 
@@ -28,8 +33,8 @@ export ONOS_USER=onos
 export ONOS_APPS=drivers,openflow,proxyarp,mobility,fwd
 EOF
 
-# echo "*** Fixing permissions - do we need to do this?"
-# chown -R onos /opt/onos/
+echo "*** Fixing permissions on /opt/onos/apps"
+chown -R onos /opt/onos/apps
 
 echo "*** Copying init files"
 cp /opt/onos/init/onos.initd /etc/init.d/onos
@@ -46,5 +51,5 @@ else
    service onos status
 fi
 
-echo "*** Checkint whether java is running"
+echo "*** Checking whether java is running"
 pgrep java
