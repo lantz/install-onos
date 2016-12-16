@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/bash -x
 
 set -e  # exit on error
 
-echo "*** ONOS Install script"
+echo "*** ONOS Installation Script"
 
 echo "*** Installing ONOS dependencies"
 apt-get install software-properties-common -y
@@ -35,15 +35,12 @@ EOF
 
 echo "*** Copying init files"
 cp /opt/onos/init/onos.initd /etc/init.d/onos
-cp /opt/onos/init/onos.conf /etc/init/onos.conf
+[ -d /etc/init/ ] && cp /opt/onos/init/onos.conf /etc/init/onos.conf
+[ -d /etc/systemd/system/ ] && cp /opt/onos/init/onos.service /etc/systemd/system/
 which systemctl > /dev/null && ( systemctl daemon-reload; systemctl enable onos )
 
 echo "*** Starting ONOS"
 service onos start
 
 echo "*** Checking ONOS status"
-if which systemctl > /dev/null; then
-   systemctl status onos -l --no-pager
-else
-   service onos status
-fi
+service onos status
