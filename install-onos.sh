@@ -33,9 +33,6 @@ export ONOS_USER=onos
 export ONOS_APPS=drivers,openflow,proxyarp,mobility,fwd
 EOF
 
-echo "*** Fixing permissions on /opt/onos/apps"
-chown -R onos /opt/onos/apps
-
 echo "*** Copying init files"
 cp /opt/onos/init/onos.initd /etc/init.d/onos
 cp /opt/onos/init/onos.conf /etc/init/onos.conf
@@ -50,6 +47,3 @@ if which systemctl > /dev/null; then
 else
    service onos status
 fi
-
-echo "*** Checking whether java is running"
-pgrep java
