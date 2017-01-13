@@ -11,10 +11,10 @@ apt-get update
 echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
 apt-get install oracle-java8-installer oracle-java8-set-default -y
 
-echo "*** Checking for ONOS archive"
+echo "*** Checking for ONOS archive in this directory"
 ONOS_TAR=($(echo onos*.tar.gz))
 if [ ! -r $ONOS_TAR ]; then
-    ONOS_TAR=onos-1.8.0-rc6.tar.gz
+    ONOS_TAR=onos-1.8.0.tar.gz
     echo "*** Fetching $ONOS_TAR"
     wget -c http://downloads.onosproject.org/nightly/$ONOS_TAR
 fi
