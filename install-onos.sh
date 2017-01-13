@@ -4,7 +4,7 @@ set -e  # exit on error
 
 echo "*** ONOS Installation Script"
 
-echo "*** Installing ONOS dependencies"
+echo "*** Installing Oracle Java 8"
 apt-get install software-properties-common -y
 add-apt-repository ppa:webupd8team/java -y
 apt-get update
