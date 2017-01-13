@@ -34,10 +34,10 @@ export ONOS_APPS=drivers,openflow,proxyarp,mobility,fwd
 EOF
 
 echo "*** Copying init files"
-cp /opt/onos/init/onos.initd /etc/init.d/onos
-[ -d /etc/init/ ] && cp /opt/onos/init/onos.conf /etc/init/onos.conf
-[ -d /etc/systemd/system/ ] && cp /opt/onos/init/onos.service /etc/systemd/system/
-which systemctl > /dev/null && ( systemctl daemon-reload; systemctl enable onos )
+cp /opt/onos/init/onos.initd /etc/init.d/onos  # base / system V
+[ -d /etc/init/ ] && cp /opt/onos/init/onos.conf /etc/init/onos.conf  # upstart
+[ -d /etc/systemd/system/ ] && cp /opt/onos/init/onos.service /etc/systemd/system/  # systemd
+which systemctl > /dev/null && ( systemctl daemon-reload; systemctl enable onos )   # systemd
 
 echo "*** Starting ONOS"
 service onos start
