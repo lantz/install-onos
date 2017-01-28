@@ -9,4 +9,4 @@ echo "*** Running netstat"
 netstat -atp | egrep ':6653|:6633'
 
 echo "*** Testing ONOS"
-mn --controller remote --test pingall
+mn --controller remote,port=6653 --test pingall
