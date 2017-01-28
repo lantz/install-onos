@@ -6,7 +6,7 @@ before_install:
 - sudo apt-get update -qq
 
 install:
-- sudo apt-get -y install mininet
+- sudo apt-get -y install git mininet
 
 script:
 - bash -x build-onos.sh
