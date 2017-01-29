@@ -3,7 +3,7 @@
 set -e  # Exit on any error
 
 echo "*** Installing mininet"
-apt-get -q -y install mininet
+apt-get -qq install mininet
 
 echo "*** Checking ONOS status"
 service onos status
