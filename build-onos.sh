@@ -18,7 +18,7 @@ tools/build/onos-buck build onos
 popd
 
 echo "*** Copying onos.tar.gz to onos-$tag.tar.gz"
-cp onos-$tag/buck-out/gen/tools/package/onos-package/onos.tar.gz onos-$tag.tar.gz
+cp $builddir/buck-out/gen/tools/package/onos-package/onos.tar.gz onos-$tag.tar.gz
 
 echo "*** ONOS build complete"
 exit 0
