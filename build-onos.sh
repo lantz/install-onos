@@ -14,7 +14,7 @@ pushd $builddir
 export ONOS_ROOT=  # in case it's set to point elsewhere
 echo "onos_root is $ONOS_ROOT"
 env | grep -i onos
-tools/build/onos-buck build onos
+tools/build/onos-buck build onos 1>/dev/null
 popd
 
 echo "*** Copying onos.tar.gz to onos-$tag.tar.gz"
