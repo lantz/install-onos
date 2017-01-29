@@ -5,11 +5,11 @@ set -e  # exit on error
 echo "*** ONOS Installation Script"
 
 echo "*** Installing Oracle Java 8"
-apt-get install software-properties-common -y
-add-apt-repository ppa:webupd8team/java -y
-apt-get update
+apt-get -q install software-properties-common -y
+add-apt-repository -q ppa:webupd8team/java -y
+apt-get -q update
 echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
-apt-get install oracle-java8-installer oracle-java8-set-default -y
+apt-get -q install oracle-java8-installer oracle-java8-set-default -y
 
 echo "*** Checking for ONOS archive in this directory"
 ONOS_TAR=($(echo onos*.tar.gz))
