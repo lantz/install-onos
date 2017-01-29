@@ -12,6 +12,9 @@ for controller in openvswitch-controller openvswitch-testcontroller ovs-controll
     fi
 done
 
+echo "*** Checking OVS status"
+service openvswitch-switch status
+
 echo "*** Checking ONOS status"
 service onos status < /dev/null
 ps ax | grep java
@@ -33,4 +36,4 @@ netstat -atp
 netstat -atp | egrep ':6653'
 
 echo "*** Testing ONOS"
-mn --controller remote,port=6653 --test pingall
+mn -v debug --controller remote,port=6653 --test pingall
