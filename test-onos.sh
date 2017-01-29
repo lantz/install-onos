@@ -7,6 +7,7 @@ apt-get -qq install mininet
 
 echo "*** Checking ONOS status"
 service onos status
+ps ax | grep java
 
 echo "*** Dumping ONOS options"
 cat /opt/onos/options
@@ -21,6 +22,7 @@ for i in `seq 1 90`; do
 done
 
 echo "*** Confirming that ONOS is listening on port 6653"
+netstat -atp
 netstat -atp | egrep ':6653'
 
 echo "*** Testing ONOS"
