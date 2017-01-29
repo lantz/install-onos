@@ -10,7 +10,7 @@ install:
 
 script:
 - bash build-onos.sh
-- sudo bash install-onos
+- sudo bash install-onos.sh
 - sudo bash test-onos.sh
 
 notifications:
