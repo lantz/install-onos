@@ -6,7 +6,7 @@ echo "*** ONOS Installation Script"
 
 echo "*** Installing Oracle Java 8"
 apt-get -q install software-properties-common -y
-add-apt-repository -q ppa:webupd8team/java -y
+add-apt-repository ppa:webupd8team/java -y
 apt-get -q update
 echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
 apt-get -q install oracle-java8-installer oracle-java8-set-default -y
