@@ -3,14 +3,8 @@
 set -e  # Exit on any error
 
 echo "*** Installing mininet"
-apt-get -qq install mininet
-
-echo "*** Shutting down ovs-controller"
-for controller in openvswitch-controller openvswitch-testcontroller ovs-controller; do
-    if service $controller status >/dev/null 2>/dev/null </dev/null; then
-        service $controller stop
-    fi
-done
+git clone git://github.com/mininet/mininet
+mininet/util/install.sh -nv > /dev/null
 
 echo "*** Checking OVS status"
 service openvswitch-switch status
