@@ -9,9 +9,9 @@ install:
 - sudo apt-get -y install git mininet
 
 script:
-- bash -x build-onos.sh
-- sudo bash -x install-onos.sh
-- sudo bash -x test-onos.sh
+- bash build-onos.sh
+- sudo bash install-onos.sh
+- sudo bash test-onos.sh
 
 notifications:
   email:
