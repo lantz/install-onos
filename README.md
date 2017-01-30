@@ -1,12 +1,11 @@
 # ONOS Installation Test Scripts
+[![Build Status][6]][5]
 
 This set of scripts [tests the procedure to install ONOS][5] from the
 `onos*.tar.gz` archive.
 
 It does so by [building][1] ONOS master, [installing ONOS from the `.tar.gz`][2],
 and [performing a simple end-to-end system test][3] using [Mininet][7].
-
-[![Build Status][6]][5]
 
 - [`build-onos.sh`][1]:   check out ONOS master, build, and run unit tests
 - [`install-onos.sh`][2]: install `onos*.tar.gz` archive on local system
