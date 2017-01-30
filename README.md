@@ -6,7 +6,7 @@ and performing a simple end-to-end system test using [Mininet][2].
 
 [![Build Status][1]](https://travis-ci.org/lantz/install-onos)
 
-- [build-onos.sh]:   check out ONOS master, build, and run unit tests
+- [[build-onos.sh]]:   check out ONOS master, build, and run unit tests
 - [install-onos.sh]: install onos*.tar.gz archive on local system
 - [test-onos.sh]:    sanity test for local ONOS installation using Mininet
 - [.travis.yml]:     travis CI script for testing against Ubuntu 16.04
