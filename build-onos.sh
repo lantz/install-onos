@@ -11,14 +11,14 @@ git clone https://gerrit.onosproject.org/onos $builddir
 
 pushd $builddir
 
-echo "*** Building ONOS"
+echo "*** Running ONOS unit tests (ignoring failures)"
+tools/build/onos-buck test 1>/dev/null || true
+
+echo "*** Building onos.tar.gz package"
 export ONOS_ROOT=  # in case it's set to point elsewhere
 echo "onos_root is $ONOS_ROOT"
 env | grep -i onos
 tools/build/onos-buck build onos 1>/dev/null
-
-echo "*** Running ONOS unit tests"
-tools/build/onos-buck test 1>/dev/null
 
 popd
 
