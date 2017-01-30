@@ -1,7 +1,7 @@
 This set of scripts tests the procedure to install ONOS from the
-onos*.tar.gz archive.
+`onos*.tar.gz` archive.
 
-It does so by building ONOS master, installing from the .tar.gz,
+It does so by building ONOS master, installing from the `.tar.gz`,
 and performing a simple end-to-end system test using [Mininet][2].
 
 [![Build Status][1]](https://travis-ci.org/lantz/install-onos)
