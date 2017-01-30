@@ -1,4 +1,4 @@
-# ONOS Installation Test Scripts
+# `install-onos`: ONOS Installation Test Scripts
 [![Build Status][6]][5]
 
 This set of scripts [tests the procedure to install ONOS][5] from the
