@@ -18,10 +18,9 @@ env | grep -i onos
 tools/build/onos-buck build onos 1>/dev/null
 
 echo "*** Running ONOS unit tests"
-tools/build/onos-buck test
+tools/build/onos-buck test 1>/dev/null
 
 popd
-
 
 echo "*** Copying onos.tar.gz to onos-$tag.tar.gz"
 cp $builddir/buck-out/gen/tools/package/onos-package/onos.tar.gz onos-$tag.tar.gz
