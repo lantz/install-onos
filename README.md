@@ -1,7 +1,7 @@
 # `install-onos`: ONOS Installation Test Scripts
 [![Build Status][6]][5]
 
-This set of scripts [tests the procedure to install ONOS][5] from the
+This set of scripts [tests the procedure to install ONOS][5] from an
 `onos*.tar.gz` archive.
 
 It does so by [building][1] ONOS master, [installing ONOS from the `.tar.gz`][2],
