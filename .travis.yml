@@ -1,11 +1,11 @@
+language: java
+
 matrix:
   include:
     - os: linux
-      language: java
       sudo: required
       dist: trusty
     - os: linux
-      language: java
       sudo: required
       dist: xenial
 
