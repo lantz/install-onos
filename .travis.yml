@@ -1,9 +1,13 @@
-language: java
-sudo: required
-
-dist:
-- trusty
-- xenial
+matrix:
+  include:
+    - os: linux
+      language: java
+      sudo: required
+      dist: trusty
+    - os: linux
+      language: java
+      sudo: required
+      dist: xenial
 
 before_install:
 - sudo apt-get -qq update
