@@ -7,9 +7,9 @@ before_install:
 
 install:
 - sudo apt-get -qq install git
+- bash build-onos.sh
 
 script:
-- bash build-onos.sh
 - sudo bash install-onos.sh
 - sudo bash test-onos.sh
 
