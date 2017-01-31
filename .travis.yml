@@ -1,13 +1,14 @@
 language: java
+sudo: required
 
 matrix:
   include:
     - os: linux
-      sudo: required
       dist: trusty
+      env: dist="14.04 LTS trusty"
     - os: linux
-      sudo: required
       dist: xenial
+      env: dist="16.04 LTS xenial"
 
 before_install:
 - sudo apt-get -qq update
