@@ -1,10 +1,11 @@
-language: java
-sudo: required
-
 matrix:
   include:
     - dist: trusty
+      language: java
+      sudo: required
     - dist: xenial
+      language: java
+      sudo: required
 
 before_install:
 - sudo apt-get -qq update
