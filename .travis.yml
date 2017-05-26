@@ -1,13 +1,14 @@
 language: java
-jdk: oraclejdk8
 sudo: required
 
 matrix:
   include:
     - dist: trusty
       env: dist="14.04 LTS trusty"
+      jdk: oraclejdk8
     - dist: xenial
       env: dist="16.04 LTS xenial"
+      jdk: oraclejdk8
 
 before_install:
 - sudo apt-get -qq update
